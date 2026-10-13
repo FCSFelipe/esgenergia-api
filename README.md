@@ -1,7 +1,7 @@
 
 # Projeto - ESGenergia (Cidades ESG Inteligentes)
 
-**Desenvolvido por:**
+**Desenvolvido por::**
 - Cássio Mateus da Silva Linhares (RM565388)
 - Pedro Aguiar de Freitas Valadão (RM562706)
 - Felipe de Lima Simões (RM562740)
