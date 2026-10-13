@@ -1,8 +1,7 @@
-# Projeto - ESGenergia (Cidades ESG Inteligentes)
 
 # Projeto - ESGenergia (Cidades ESG Inteligentes)
 
-**Desenvolvido por:**
+**Desenvolvido por::**
 - Cássio Mateus da Silva Linhares (RM565388)
 - Pedro Aguiar de Freitas Valadão (RM562706)
 - Felipe de Lima Simões (RM562740)
@@ -17,13 +16,13 @@
 
 ## Pipeline CI/CD
 Utilizamos o **GitHub Actions** para automatizar a integração e entrega contínuas. O pipeline é composto por três etapas (jobs):
-1. **Build e Testes**: Faz o checkout do código, configura o JDK 27 e executa o Maven (`mvn clean test package`) para validar o código.
+1. **Build e Testes**: Faz o checkout do código, configura o JDK 21 e executa o Maven (`mvn clean test package`) para validar o código.
 2. **Deploy Staging**: Após os testes passarem, simula o deploy automático em um ambiente de homologação.
 3. **Deploy Produção**: Por fim, simula a promoção do código para o ambiente de produção.
 
 ## Containerização
 A aplicação foi empacotada usando um *Dockerfile* com *multi-stage build*. 
-A primeira etapa compila o Java com Maven e a segunda etapa utiliza uma imagem Alpine mínima com o JRE 27 para executar o `.jar`.
+A primeira etapa compila o Java com Maven e a segunda etapa utiliza uma imagem Alpine mínima com o JRE 21 para executar o `.jar`.
 A orquestração com o banco MongoDB é feita pelo `docker-compose.yml`, utilizando uma rede (`esg-network`) para comunicação interna e um volume (`mongodb_data`) para persistência das coleções.
 
 ## Prints do funcionamento
