@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  esgenergia-api:
+    build: .
+    container_name: esgenergia-api
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://esgenergia-db:27017/esgenergiadb
+    networks:
+      - esg-network
+    depends_on:
+      - esgenergia-db
+
+  esgenergia-db:
+    image: mongo:latest
+    container_name: esgenergia-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - esg-network
+
+networks:
+  esg-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
